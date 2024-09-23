@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://example.com/about/</loc>
+  </url><url>
+    <loc>https://example.com/notes/</loc>
+  </url><url>
+    <loc>https://example.com/search/placeholder/</loc>
+  </url><url>
+    <loc>https://example.com/categories/</loc>
+  </url><url>
+    <loc>https://example.com/post/</loc>
+  </url><url>
+    <loc>https://example.com/archive/</loc>
+  </url><url>
+    <loc>https://example.com/search/</loc>
+  </url><url>
+    <loc>https://example.com/tags/</loc>
+  </url><url>
+    <loc>https://example.com/categories/tech/</loc>
+  </url><url>
+    <loc>https://example.com/%20/</loc>
+  </url><url>
+    <loc>https://example.com/tags/test/</loc>
+  </url><url>
+    <loc>https://example.com/</loc>
+  </url>
+</urlset>
