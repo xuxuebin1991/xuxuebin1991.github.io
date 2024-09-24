@@ -34,9 +34,9 @@
     <meta name="keyword"  content="土壤, 土壤健康, 模型">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>xxb的博客 | Xuebin Xu Blog</title>
+    <title>Tag2 | xxb的博客 | Xuebin Xu Blog</title>
 
-    <link rel="canonical" href="/about/">
+    <link rel="canonical" href="/tags/tag2/">
 
     
     
@@ -171,68 +171,53 @@
 
 
 
-
-<article>
-    <div class="container">
-        <div class="row">
-            
-            <div class="
+  
+<div data-pagefind-ignore="all" class="container">
+    <div class="row">
+        
+        
+   	    <div class="
             col-lg-8 col-lg-offset-1
             col-md-8 col-md-offset-1
             col-sm-12
             col-xs-12
-            post-container">
+            post-container
+        ">
             
-                 
- <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
-    <option value="0" selected> 中文 | Chinese </option>
-    <option value="1"> 英文 | English </option>
-</select>
+<div data-pagefind-ignore="all">
 
-                
-                <div class="zh post-container">
-                    
-                    <h2 id="关于我">关于我</h2>
-<p>Hi，我是xxb</p>
-<p>工作联系： <a href="mailto:xuxuebin@nbu.edu.cn">xuxuebin@nbu.edu.cn</a></p>
-<h2 id="出版物">出版物</h2>
+<div class="post-preview">
+    <a href="https://xuxuebin1991.github.io/post/second_test/">
+        <h2 class="post-title">
+            An Example Post
+        </h2>
+	
+        <div class="post-content-preview">
+	
+            <h2 id="test">TEST</h2>
+<h2 id="test-1">TEST</h2>
+       
+        </div>
+    </a>
+    <p class="post-meta">
+    
+        Posted by      &#34;xxb&#34; on Tuesday, September 24, 2024
+        
+        
+    
+    </p>
 
-                </div>
-            
-                
-                <div class="en post-container">
-                    <h2 id="about-me">About Me</h2>
-<p><strong>Xu Xuebin</strong> is</p>
+</div>
+<hr>
 
-                </div>
-            
-             
-            
-
-
-
-
-<link href="%20/dist/Artalk.css" rel="stylesheet" />
-<script src="%20/dist/Artalk.js"></script>
-
-
-<div id="Comments"></div>
-
-<script>
-    Artalk.init({
-        el: '#Comments',
-        pageKey: 'https:\/\/xuxuebin1991.github.io\/about\/',
-        pageTitle: '',
-        server: ' ',
-        site: 'xxx blog',
-    })
-</script>
-
+</div>
 
             
-            </div>
-            
-            
+
+
+
+       	</div>
+        
 
 <div class="
     col-lg-3 col-lg-offset-0
@@ -358,9 +343,9 @@
     
 </div>
 
-        </div>
-    </div>
-</article>
+	</div>
+</div>
+
 
 
 
@@ -438,7 +423,7 @@
             
            
                    <li>
-                       <a href='' rel="alternate" type="application/rss+xml" title="Xuebin Xu" >
+                       <a href='/tags/tag2/index.xml' rel="alternate" type="application/rss+xml" title="Xuebin Xu" >
                            <span class="fa-stack fa-lg">
                                <i class="fas fa-circle fa-stack-2x"></i>
                                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
@@ -567,57 +552,6 @@
 </script>
 
 
-
-<script type="text/javascript">
-    
-    var $zh = document.querySelector(".zh");
-    var $en = document.querySelector(".en");
-    var $select = document.querySelector("select");
-
-    
-    function getLang() { return new URLSearchParams(document.location.search).get("lang") }
-
-    function setLang(newLang) {
-        var params = new URLSearchParams(document.location.search)
-        params.set("lang", newLang)
-        document.location.search = params.toString()  
-    }
-
-    
-    function _render() {
-        var lang = getLang()
-        
-        if (lang == "zh") {
-            $select.selectedIndex = 0;
-            $zh.style.display = "block";
-            $zh.classList.add("active");
-            $en.style.display = "none";
-            $en.classList.remove("active");
-            
-        } else {
-            $select.selectedIndex = 1;
-            $en.style.display = "block";
-            $en.classList.add("active");
-            $zh.style.display = "none";
-            $zh.classList.remove("active");
-        }
-        
-        generateCatalog(".catalog-body");
-    }
-
-    
-    function onLanChange(index) {
-        if (index == 0) {
-            lang = "zh"
-        } else {
-            lang = "en"
-        }
-        setLang(lang)
-    }
-
-    
-    _render();
-</script>
 
 
 
