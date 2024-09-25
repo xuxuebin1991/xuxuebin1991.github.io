@@ -10,20 +10,20 @@
     <meta property="og:type" content="article">
 
     
-    <meta property="og:image" content="/img/istio-install_and_example/post-bg.jpg">
-    <meta property="twitter:image" content="/img/istio-install_and_example/post-bg.jpg" />
+    <meta property="og:image" content="/img/post-bg-unix-linux.jpg">
+    <meta property="twitter:image" content="/img/post-bg-unix-linux.jpg" />
     
 
     
-    <meta name="title" content="test" />
-    <meta property="og:title" content="test" />
-    <meta property="twitter:title" content="test" />
+    <meta name="title" content="如何在Linux服务器上通过Hugo和Github搭建自己的博客" />
+    <meta property="og:title" content="如何在Linux服务器上通过Hugo和Github搭建自己的博客" />
+    <meta property="twitter:title" content="如何在Linux服务器上通过Hugo和Github搭建自己的博客" />
     
 
     
-    <meta name="description" content="this is a test blog">
-    <meta property="og:description" content="this is a test blog" />
-    <meta property="twitter:description" content="this is a test blog" />
+    <meta name="description" content="使用Hugo和github搭建自己的个人博客">
+    <meta property="og:description" content="使用Hugo和github搭建自己的个人博客" />
+    <meta property="twitter:description" content="使用Hugo和github搭建自己的个人博客" />
     
 
     
@@ -34,7 +34,7 @@
     <meta name="keyword"  content="土壤, 土壤健康, 模型">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>test | xxb的博客 | Xuebin Xu Blog</title>
+    <title>如何在Linux服务器上通过Hugo和Github搭建自己的博客 | xxb的博客 | Xuebin Xu Blog</title>
 
     <link rel="canonical" href="/%20/">
 
@@ -158,7 +158,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/img/istio-install_and_example/post-bg.jpg')
+        background-image: url('/img/post-bg-unix-linux.jpg')
     }
 </style>
 
@@ -170,18 +170,26 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/test" title="Test">
-                            Test
+                        <a class="tag" href="/tags/linux" title="Linux">
+                            Linux
+                        </a>
+                        
+                        <a class="tag" href="/tags/hugo" title="Hugo">
+                            Hugo
+                        </a>
+                        
+                        <a class="tag" href="/tags/blog" title="Blog">
+                            Blog
                         </a>
                         
                     </div>
-                    <h1>test</h1>
-                    <h2 class="subheading">test test</h2>
+                    <h1>如何在Linux服务器上通过Hugo和Github搭建自己的博客</h1>
+                    <h2 class="subheading"> </h2>
                     <span class="meta">
                         
                             Posted by 
                             
-                                xxb
+                                xuebin xu
                              
                             on 
                             Monday, January 1, 0001
@@ -210,7 +218,100 @@
                 post-container">
 
                 
-                <h2 id="test">TEST</h2>
+                <h2 id="在服务器上安装-hugo">在服务器上安装 Hugo</h2>
+<ol>
+<li>
+<p>下载安装包：到<a href="https://gohugo.io/">Hugo</a>官网，打开 Hugo 的 <a href="https://github.com/gohugoio/hugo">GitHub 源码</a>，点击 Tags，选择最新版本的 Hugo 安装包，在 Assets 里选择适合自己服务器版本的安装包，我这里选择的是 <code>hugo_extended_0.134.3_linux-amd64.tar.gz</code>，右击复制链接地址，在服务器中输入：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://github.com/gohugoio/hugo/releases/download/v0.134.3/hugo_extended_0.134.3_linux-amd64.tar.gz
+</span></span></code></pre></div><p>下载 <code>tar.gz</code> 格式的安装包。</p>
+</li>
+<li>
+<p>安装 hugo 并配置环境：进入存放 hugo 安装包的文件夹，将 hugo 安装包解压：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -xzvf hugo_extended_0.134.3_linux-amd64.tar.gz -C <span style="color:#ff79c6">[</span>指定文件夹<span style="color:#ff79c6">]</span>
+</span></span></code></pre></div><p>安装完成后，打开服务上的 <code>.bashrc</code> 文件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim ~/.bashrc
+</span></span></code></pre></div><p>将下面的代码复制到 <code>.bashrc</code> 文件中：</p>
+<pre tabindex="0"><code>export PATH=$PATH:/[...]/hugo_extended_0.134.3
+</code></pre><p>其中 <code>/[...]/hugo_extended_0.134.3</code> 是你存放 hugo 包的文件路径，替换成自己的就行。
+然后输入：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">source</span> ~./.bashrc
+</span></span></code></pre></div><p>输入下面的代码，检查 hugo 是否正确安装：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo -version
+</span></span></code></pre></div><p>如果显示 hugo 的版本说明已经安装上了。</p>
+</li>
+<li>
+<p>创建博客：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new site my-blog
+</span></span></code></pre></div><p>进入博客文件目录：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> my-blog
+</span></span></code></pre></div></li>
+<li>
+<p>添加主题：在<a href="https://themes.gohugo.io/"> hugo 官网主题库</a>查找相应的主题，这里我以 <a href="https://github.com/zhaohuabing/hugo-theme-cleanwhite">Clean White</a> 主题为例，按照该主题的说明文件，安装主题：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> themes
+</span></span><span style="display:flex;"><span>git clone https://github.com/zhaohuabing/hugo-theme-cleanwhite.git
+</span></span></code></pre></div><p>如果服务器无法通过 <code>git</code> 下载，可以直接使用 <code>url</code> 下载后，解压：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> themes
+</span></span><span style="display:flex;"><span>wget https://github.com/zhaohuabing/hugo-theme-cleanwhite/archive/refs/heads/master.zip
+</span></span><span style="display:flex;"><span>unzip master.zip
+</span></span></code></pre></div><p>下载主题完成后将主题中的 <code>exampleSite</code> 中的文件拷贝出来到自己博客文件夹：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp -r hugo-theme-cleanwhite/exampleSite/** ../
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> ..
+</span></span></code></pre></div><p>此时，可以在本地运行博客，打开网址查看：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo server -D
+</span></span></code></pre></div></li>
+<li>
+<p>更改模板：此时的博客还是模板形式，需要对里面的内容进行修改：</p>
+<ul>
+<li><code>/content/about/</code>: 此文件夹是放个人简介文件位置；</li>
+<li><code>/content/notes/</code>: 此文件夹是放笔记的位置；</li>
+<li><code>/content/post/</code>: 此文件夹是放博客内容的位置，生成的博客都在此处；</li>
+<li><code>config.toml</code> 文件：此文件是博客模板格式的文件，可根据相关内容进行修改。</li>
+</ul>
+</li>
+<li>
+<p>创建新的博客：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new posts/my-first-post.md
+</span></span></code></pre></div><p>此时创建了新的博客 <code>.md</code> 文件，可打开添加博客内容。</p>
+</li>
+<li>
+<p>使用 <a href="https://github.com/">GitHub</a> 托管博客：首先你得有一个 GitHub 账号：
+登录账号后，创建博客仓库，Repository name 设置为 <code>[username].github.io</code>，<code>[username]</code>是自己的 GitHub 账户名，勾选 Public 和 README 文件，设置 <code>main</code> 分支为仓库默认分支。
+GitHub 账号注册和仓库创建详见<a href="https://cloud.tencent.com/developer/article/1487508">教程</a>。</p>
+</li>
+<li>
+<p>将博客推送至 GitHub 仓库：首先生成静态文件，静态文件存放在 <code>public</code> 文件夹中：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo
+</span></span></code></pre></div><p>进入 <code>public</code> 文件夹，初始化 <code>Git</code>，链接远程 GitHub 服务器：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> public
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git remote add origin https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 提交推送</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#f1fa8c">&#34;Initial commit&#34;</span>
+</span></span><span style="display:flex;"><span>git push -u origin main   
+</span></span></code></pre></div><p>可能出现的错误：
+（1） <code>error: src refspec main does not match any. error: failed to push some refs to</code>
+查看 branch 名称：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch
+</span></span></code></pre></div><p>如果分支名称是 <code>mster</code>，则需要将其修改与 GitHub 上一致：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch -m master main
+</span></span></code></pre></div><p>（2）<code>fatal: unable to access: Failed to connect to github.com port 443: Connection timed out</code>
+查看网络连接是否正常：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping github.com
+</span></span></code></pre></div><p>如果正常，尝试用 <code>set-url</code> 链接</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote set-url origin https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git
+</span></span><span style="display:flex;"><span>ssh -T git@github.com
+</span></span></code></pre></div><p>如果显示下面结果说明连接成功：</p>
+<pre tabindex="0"><code>Hi XXX! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><p>此时再重新推送。
+（3）如果出现 <code>! [rejected]        main -&gt; main (fetch first) error: failed to push some refs to</code>
+可先将 GitHub 上的仓库先 <code>pull</code> 下来，然后再推送：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git pull origin main
+</span></span></code></pre></div><p>如果还是不行，可以强制推送（此方法不建议）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push origin main --force
+</span></span></code></pre></div></li>
+</ol>
 
 
                 
@@ -283,7 +384,7 @@
     Artalk.init({
         el: '#Comments',
         pageKey: 'https:\/\/xuxuebin1991.github.io\/%20\/',
-        pageTitle: 'test',
+        pageTitle: '如何在Linux服务器上通过Hugo和Github搭建自己的博客',
         server: ' ',
         site: 'xxx blog',
     })
@@ -324,6 +425,12 @@
                         
                         
                         
+                        
+                        
+                        
+                        
+                        
+                        
                         <a href="/tags/tag1" title="tag1">
                             tag1
                         </a>
@@ -333,8 +440,6 @@
                         <a href="/tags/tag2" title="tag2">
                             tag2
                         </a>
-                        
-                        
                         
                         
                     </div>

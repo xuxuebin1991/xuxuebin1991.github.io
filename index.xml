@@ -51,11 +51,11 @@
       <description></description>
     </item>
     <item>
-      <title>test</title>
+      <title>如何在Linux服务器上通过Hugo和Github搭建自己的博客</title>
       <link>https://xuxuebin1991.github.io/%20/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://xuxuebin1991.github.io/%20/</guid>
-      <description>&lt;h2 id=&#34;test&#34;&gt;TEST&lt;/h2&gt;</description>
+      <description>&lt;h2 id=&#34;在服务器上安装-hugo&#34;&gt;在服务器上安装 Hugo&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;下载安装包：到&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;官网，打开 Hugo 的 &lt;a href=&#34;https://github.com/gohugoio/hugo&#34;&gt;GitHub 源码&lt;/a&gt;，点击 Tags，选择最新版本的 Hugo 安装包，在 Assets 里选择适合自己服务器版本的安装包，我这里选择的是 &lt;code&gt;hugo_extended_0.134.3_linux-amd64.tar.gz&lt;/code&gt;，右击复制链接地址，在服务器中输入：&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
