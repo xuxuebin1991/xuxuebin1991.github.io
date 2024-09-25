@@ -300,7 +300,7 @@ GitHub 账号注册和仓库创建详见<a href="https://cloud.tencent.com/devel
 查看网络连接是否正常：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ping github.com
 </span></span></code></pre></div><p>如果正常，尝试用 <code>set-url</code> 链接</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote set-url origin https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote set-url origin github@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git
 </span></span><span style="display:flex;"><span>ssh -T git@github.com
 </span></span></code></pre></div><p>如果显示下面结果说明连接成功：</p>
 <pre tabindex="0"><code>Hi XXX! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
